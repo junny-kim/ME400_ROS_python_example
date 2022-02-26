@@ -45,9 +45,9 @@ def talker():
     rospy.init_node('publisher', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     count = 0
+    msg = MsgTutorial()
     while not rospy.is_shutdown():
         count = count + 1
-        msg = MsgTutorial()
         cur_time = rospy.get_rostime()
         msg.timestamp_test = cur_time
         msg.integer_test = count

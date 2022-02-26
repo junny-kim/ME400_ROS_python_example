@@ -38,7 +38,6 @@
 
 import rospy
 from ros_tutorials_topic.msg import MsgTutorial
-from std_msgs.msg import String
 
 if __name__ == '__main__':
     try:

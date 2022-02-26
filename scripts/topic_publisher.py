@@ -39,12 +39,6 @@
 import rospy
 from ros_tutorials_topic.msg import MsgTutorial
 
-if __name__ == '__main__':
-    try:
-        talker()
-    except rospy.ROSInterruptException:
-        pass
-
 def talker():
     pub = rospy.Publisher('ros_tutorial_msg', MsgTutorial, queue_size=10)
     rospy.init_node('publisher', anonymous=True)
@@ -61,4 +55,8 @@ def talker():
         pub.publish(msg)
         rate.sleep()
 
-
+if __name__ == '__main__':
+    try:
+        talker()
+    except rospy.ROSInterruptException:
+        pass

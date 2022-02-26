@@ -51,7 +51,7 @@ def talker():
         cur_time = rospy.get_rostime()
         msg.timestamp_test = cur_time
         msg.integer_test = count
-        hello_str = "published data = time: {:.6f}, count: {}".format(cur_time.to_sec(),msg.integer_test)
+        hello_str = "published data = time: {:.6f}, count: {}".format(msg.timestamp_test.to_sec(),msg.integer_test)
         rospy.loginfo(hello_str)
         pub.publish(msg)
         rate.sleep()

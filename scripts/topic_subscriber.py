@@ -39,8 +39,9 @@
 import rospy
 from ros_tutorials_topic.msg import MsgTutorial
 
-if __name__ == '__main__':
-    listener()
+def callback(data):
+    hello_str = "received data = time: {:.6f}, count: {}".format(data.timestamp_test.to_sec(),data.integer_test)
+    rospy.loginfo(hello_str)
     
 def listener():
 
@@ -56,7 +57,7 @@ def listener():
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()
 
-def callback(data):
-    hello_str = "received data = time: {:.6f}, count: {}".format(data.timestamp_test.to_sec(),data.integer_test)
-    rospy.loginfo(hello_str)
 
+
+if __name__ == '__main__':
+    listener()
